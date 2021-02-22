@@ -1,9 +1,6 @@
-import static org.junit.Assert.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -16,7 +13,7 @@ public class TestClass {
 
     protected WebDriver driver;
 
-    @Before
+    @BeforeEach
     public void setUp() throws MalformedURLException {
         String selenoidURL = "http://localhost:4444/wd/hub";
         DesiredCapabilities caps = new DesiredCapabilities();
@@ -44,7 +41,7 @@ public class TestClass {
 
     }
 
-    @After
+    @AfterEach
     public void setDown() {
         if (driver != null) {
             driver.quit();
