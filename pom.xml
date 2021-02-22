@@ -34,12 +34,6 @@
             <scope>test</scope>
         </dependency>
 
-
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>4.2.2</version>
-        </dependency>
     </dependencies>
 
     <build>
