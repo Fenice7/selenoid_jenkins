@@ -9,8 +9,8 @@ pipeline {
     }
 
     parameters {
-        string(name: 'GIT_URL', defaultValue: 'https://github.com/Fenice7/QA_Otus_Homework.git', description: 'The target git url')
-        string(name: 'GIT_BRANCH', defaultValue: 'lesson02', description: 'The target git branch')
+        string(name: 'GIT_URL', defaultValue: 'https://github.com/Fenice7/selenoid_jenkins.git', description: 'The target git url')
+        string(name: 'GIT_BRANCH', defaultValue: 'main', description: 'The target git branch')
         choice(name: 'BROWSER_NAME', choices: ['chrome', 'firefox'], description: 'Pick the target browser in Selenoid')
         choice(name: 'BROWSER_VERSION', choices: ['88.0', '87.0', '78.0'], description: 'Pick the target browser version in Selenoid')
     }
