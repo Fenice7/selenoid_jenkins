@@ -1,4 +1,6 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
@@ -15,20 +17,20 @@ public class TestClass {
 
     @BeforeEach
     public void setUp() throws MalformedURLException {
-        String selenoidURL = "http://localhost:4444/wd/hub";
-        DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setBrowserName("chrome");
-        caps.setVersion("88.0");
-        caps.setCapability("enableVNC", true);
-        caps.setCapability("screenResolution", "1920x1080");
-        caps.setCapability("enableVideo", false);
-        caps.setCapability("enableLog", true);
+//        String selenoidURL = "http://localhost:4444/wd/hub";
+//        DesiredCapabilities caps = new DesiredCapabilities();
+//        caps.setBrowserName("chrome");
+//        caps.setVersion("88.0");
+//        caps.setCapability("enableVNC", true);
+//        caps.setCapability("screenResolution", "1920x1080");
+//        caps.setCapability("enableVideo", false);
+//        caps.setCapability("enableLog", true);
+//
+//        driver = new RemoteWebDriver(new URL(selenoidURL), caps);
 
-        driver = new RemoteWebDriver(new URL(selenoidURL), caps);
-
-//        WebDriverManager.chromedriver().setup();
-//        driver = new ChromeDriver();
-//        driver.manage().window().maximize();
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
 
     }
 
@@ -39,6 +41,13 @@ public class TestClass {
         assertEquals(title, "Онлайн‑курсы для профессионалов, дистанционное обучение современным профессиям");
 
 
+    }
+
+    @Test
+    public void otherTest() {
+        driver.get("https://habr.com/ru/");
+        String title = driver.getTitle();
+        assertNotEquals(title, "Онлайн‑курсы для профессионалов, дистанционное обучение современным профессиям");
     }
 
     @AfterEach
