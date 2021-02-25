@@ -7,7 +7,8 @@ services:
     ports:
       - "4444:4444"
     volumes:
-      - "/D/GIT/QA_Otus_Homework/infra/selenoid/:/etc/selenoid/" # assumed current dir contains browsers.json
+#      - "/D/GIT/QA_Otus_Homework/infra/selenoid/:/etc/selenoid/" # assumed current dir contains browsers.json
+      - "/C/Users/kizeeva/IdeaProjects/selenoid/selenoid_jenkins/infra/:/etc/selenoid/" # assumed current dir contains browsers.json
       - "/var/run/docker.sock:/var/run/docker.sock"
 #      - "/D/GIT/QA_Otus_Homework/infra/selenoid/video:/opt/selenoid/video"
 #      - "/D/GIT/QA_Otus_Homework/infra/selenoid/logs:/opt/selenoid/logs"
@@ -25,7 +26,8 @@ services:
   jenkins:
     image: jenkins/jenkins:lts
     volumes:
-      - /C/Users/Fenice/Desktop/Jenkins_Home:/var/jenkins_home
+#      - /C/Users/Fenice/Desktop/Jenkins_Home:/var/jenkins_home
+      - /C/Users/kizeeva/Desktop/jenkins_home:/var/jenkins_home
     ports:
       - 8000:8080
     network_mode: bridge

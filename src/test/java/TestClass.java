@@ -17,20 +17,20 @@ public class TestClass {
 
     @BeforeEach
     public void setUp() throws MalformedURLException {
-//        String selenoidURL = "http://localhost:4444/wd/hub";
-//        DesiredCapabilities caps = new DesiredCapabilities();
-//        caps.setBrowserName("chrome");
-//        caps.setVersion("88.0");
-//        caps.setCapability("enableVNC", true);
-//        caps.setCapability("screenResolution", "1920x1080");
-//        caps.setCapability("enableVideo", false);
-//        caps.setCapability("enableLog", true);
-//
-//        driver = new RemoteWebDriver(new URL(selenoidURL), caps);
+        String selenoidURL = "http://localhost:4444/wd/hub";
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setBrowserName("chrome");
+        caps.setVersion("88.0");
+        caps.setCapability("enableVNC", true);
+        caps.setCapability("screenResolution", "1920x1080");
+        caps.setCapability("enableVideo", false);
+        caps.setCapability("enableLog", true);
 
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        driver = new RemoteWebDriver(new URL(selenoidURL), caps);
+
+//        WebDriverManager.chromedriver().setup();
+//        driver = new ChromeDriver();
+//        driver.manage().window().maximize();
 
     }
 
