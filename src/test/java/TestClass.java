@@ -1,10 +1,10 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.parallel.ExecutionMode.CONCURRENT;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.parallel.Execution;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -28,21 +28,16 @@ public class TestClass {
 
         driver = new RemoteWebDriver(new URL(selenoidURL), caps);
 
-//        WebDriverManager.chromedriver().setup();
-//        driver = new ChromeDriver();
-//        driver.manage().window().maximize();
-
     }
-
+    @Execution(CONCURRENT)
     @Test
     public void openPage() {
         driver.get("https://otus.ru/");
         String title = driver.getTitle();
         assertEquals(title, "Онлайн‑курсы для профессионалов, дистанционное обучение современным профессиям");
-
-
     }
 
+    @Execution(CONCURRENT)
     @Test
     public void otherTest() {
         driver.get("https://habr.com/ru/");

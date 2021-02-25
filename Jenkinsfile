@@ -6,7 +6,7 @@ pipeline {
 
     triggers {
         githubPush()
-        triggers { cron('0 1 * * *') }
+        cron('0 1 * * *')
     }
 
     parameters {
