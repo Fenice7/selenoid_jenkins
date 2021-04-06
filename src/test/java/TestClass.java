@@ -17,7 +17,7 @@ public class TestClass {
 
     @BeforeEach
     public void setUp() throws MalformedURLException {
-        String selenoidURL = "http://localhost:4444/wd/hub";
+        String selenoidURL = "https://selenoid.teletrade-dj.com/wd/hub";
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setBrowserName("chrome");
         caps.setVersion("88.0");
